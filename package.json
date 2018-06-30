@@ -74,5 +74,7 @@
       "<rootDir>[/\\\\](dist|templates|node_modules)[/\\\\]"
     ]
   },
-  "pre-commit": []
+  "pre-commit": [
+    "prettier"
+  ]
 }

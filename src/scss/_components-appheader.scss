@@ -32,18 +32,11 @@
   .nav-item:visited {
     color: $text-icon-color;
   }
-
-  .nav-item {
-    .nav-label {
-      margin-bottom:0px!important;
-    }
-  }
 }
 
 .nav-menu-mobile {
   @extend %nav-menu;
-  position: fixed;
-  right: 0;
+  text-align: right;
 }
 
 .nav-menu-mobile__drop--container {

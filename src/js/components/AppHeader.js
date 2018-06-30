@@ -2,11 +2,15 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import Responsive from 'grommet/utils/Responsive'
-import { Anchor, Menu, Header, Title } from 'grommet'
+import { Anchor, Menu, Header, Title, Box } from 'grommet'
 import MenuIcon from 'grommet/components/icons/base/Menu'
 
 const NavItem = ({ label, mobile, ...props }) => (
-  <Anchor a11yTitle={label} className={mobile ? 'nav-item-mobile' : 'nav-item'} {...props}>
+  <Anchor
+    a11yTitle={label}
+    className={mobile ? 'nav-item-mobile' : 'nav-item'}
+    {...props}
+  >
     {label}
   </Anchor>
 )
@@ -36,17 +40,23 @@ export default class AppHeader extends Component {
     return (
       <Header className="app-header" fixed>
         <Title className="app-title">Maria Syed</Title>
-        <Menu
-          className={this.state.mobile ? 'nav-menu-mobile' : 'nav-menu'}
+        <Box
+          flex
+          justify={this.state.mobile ? 'end' : 'start'}
           direction="row"
-          responsive
-          inline={!this.state.mobile}
-          size="large"
-          icon={<MenuIcon />}
         >
-          <NavItem label="Home" path="/" mobile={this.state.mobile} />
-          <NavItem label="Blog" path="/blog" mobile={this.state.mobile} />
-        </Menu>
+          <Menu
+            className={this.state.mobile ? 'nav-menu-mobile' : 'nav-menu'}
+            direction="row"
+            responsive
+            inline={!this.state.mobile}
+            size="large"
+            icon={<MenuIcon colorIndex="light-2" />}
+          >
+            <NavItem label="Home" path="/" mobile={this.state.mobile} />
+            <NavItem label="Blog" path="/blog" mobile={this.state.mobile} />
+          </Menu>
+        </Box>
       </Header>
     )
   }

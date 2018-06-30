@@ -1,1 +1,1 @@
-yarn build && surge ~/documents/personal-projects/sample-app/dist mariasyed.com
+yarn build && surge ~/documents/personal-projects/mariasyed-site/dist mariasyed.com
