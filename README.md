@@ -1,6 +1,4 @@
-# sample-app
-
-This is a sample Grommet application for reference.
+# mariasyed react app
 
 To run this application, execute the following commands:
 
@@ -10,32 +8,26 @@ To run this application, execute the following commands:
     $ npm install (or yarn install)
     ```
 
-  2. Start the back-end server:
+  2. Start the front-end dev server:
 
     ```
-    $ npm run dev-server
+    $ npm run dev (or yarn run dev)
     ```
 
-  3. Start the front-end dev server:
-
-    ```
-    $ npm run dev
-    ```
-
-  4. Create the app distribution to be used by a back-end server
+  3. To create the app for distribution
 
     ```
     $ NODE_ENV=production grommet pack
     ```
 
-  5. Start the server in production mode:
+## Tools / Tech used
 
-    ```
-    $ npm start
-    ```
-
-  6. Test and run linters:
-
-    ```
-    $ npm test
-    ```
+<div>
+<img src="./images/logo-react.png" height="100" />
+<img src="./images/logo-webpack.png" height="100" />
+<img src="./images/logo-babel.png" height="100" />
+<img src="./images/logo-grommet.png" height="100" />
+<img src="./images/logo-eslint.png" height="100" />
+<img src="./images/logo-prettier.png" height="100" />
+<img src="./images/logo-jest.png" height="100" />
+</div>
