@@ -11,7 +11,7 @@ export default class Main extends Component {
     this.state = {
       error: undefined
     }
-    this.onCloseNotification.bind(this)
+    this.onCloseNotification = this.onCloseNotification.bind(this)
   }
 
   onCloseNotification() {
@@ -43,7 +43,7 @@ export default class Main extends Component {
 
 Main.propTypes = {
   children: PropTypes.oneOfType([
-    PropTypes.arrayOf(React.PropTypes.node),
+    PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ])
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import Responsive from 'grommet/utils/Responsive'
 import { Anchor, Menu, Header, Title } from 'grommet'
 
 const NavItem = ({ label, ...props }) => (
