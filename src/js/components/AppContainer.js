@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import App from 'grommet/components/App'
 import Notification from 'grommet/components/Notification'
@@ -8,8 +9,9 @@ export default class Main extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      error: undefined,
+      error: undefined
     }
+    this.onCloseNotification.bind(this)
   }
 
   onCloseNotification() {
@@ -22,7 +24,7 @@ export default class Main extends Component {
       errorNode = (
         <Notification
           closer
-          onClose={this.onCloseNotification.bind(this)}
+          onClose={this.onCloseNotification}
           status="critical"
           message="An unexpected error happened, please try again later"
         />
@@ -37,4 +39,15 @@ export default class Main extends Component {
       </App>
     )
   }
+}
+
+Main.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(React.PropTypes.node),
+    PropTypes.node
+  ])
+}
+
+Main.defaultProps = {
+  children: null
 }

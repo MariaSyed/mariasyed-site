@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
 import Accomplishments from '../components/Accomplishments'
 import Intro from '../components/Intro'
-import Section3 from '../components/Section3'
+// import Section3 from '../components/Section3'
 import { pageLoaded } from './utils'
 
 export default class Home extends Component {
@@ -17,7 +17,7 @@ export default class Home extends Component {
 
         <Accomplishments />
 
-        {/*<Section3 />*/}
+        {/* <Section3 />  */}
       </div>
     )
   }

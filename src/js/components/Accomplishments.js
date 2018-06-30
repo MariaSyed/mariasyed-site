@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 import AppSection from './AppSection'
-import { Heading, Tabs, Map, Tab } from 'grommet'
-import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter'
+import Heading from 'grommet/components/Heading'
 
 export default class Accomplishments extends Component {
   render() {
     return (
-      <AppSection colorIndex='brand'>
-        <Heading size='medium'>
-          cool stuff here soon
-        </Heading>
+      <AppSection colorIndex="brand">
+        <Heading size="medium">cool stuff here soon</Heading>
       </AppSection>
     )
     // return (

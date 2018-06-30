@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import AppContainer from './components/AppContainer'
@@ -9,11 +10,7 @@ import NotFound from './screens/NotFound'
 const AppRoute = ({ component, ...props }) => (
   <Route
     {...props}
-    component={() => (
-      <AppContainer>
-        {component}
-      </AppContainer>
-    )}
+    component={() => <AppContainer>{component}</AppContainer>}
   />
 )
 
@@ -28,3 +25,7 @@ const AppRouter = () => (
 )
 
 export default AppRouter
+
+AppRoute.propTypes = {
+  component: PropTypes.element.isRequired
+}

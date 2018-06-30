@@ -1,8 +1,8 @@
-import path from 'path';
-import webpack from 'webpack';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+import path from 'path'
+import webpack from 'webpack'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 
-const env = process.env.NODE_ENV || 'production';
+const env = process.env.NODE_ENV || 'production'
 
 let plugins = [
   new CopyWebpackPlugin([{ from: './public' }]),
@@ -11,21 +11,19 @@ let plugins = [
       NODE_ENV: JSON.stringify(env)
     }
   })
-];
+]
 
 const loaderOptionsConfig = {
   options: {
     sassLoader: {
-      includePaths: [
-        './node_modules'
-      ]
+      includePaths: ['./node_modules']
     }
   }
-};
+}
 
-const devConfig = {};
+const devConfig = {}
 if (env === 'production') {
-  loaderOptionsConfig.minimize = true;
+  loaderOptionsConfig.minimize = true
   plugins.push(
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -38,7 +36,7 @@ if (env === 'production') {
         dead_code: true,
         evaluate: true,
         if_return: true,
-        join_vars: true,
+        join_vars: true
       },
       mangle: {
         screw_ie8: true
@@ -48,16 +46,14 @@ if (env === 'production') {
         screw_ie8: true
       }
     })
-  );
+  )
 } else {
-  plugins = plugins.concat([
-    new webpack.HotModuleReplacementPlugin()
-  ]);
-  devConfig.devtool = 'cheap-module-source-map';
+  plugins = plugins.concat([new webpack.HotModuleReplacementPlugin()])
+  devConfig.devtool = 'cheap-module-source-map'
   devConfig.entry = [
     require.resolve('react-dev-utils/webpackHotDevClient'),
     './src/js/index.js'
-  ];
+  ]
   devConfig.devServer = {
     compress: true,
     clientLogLevel: 'none',
@@ -72,59 +68,63 @@ if (env === 'production') {
     proxy: {
       '/api/*': 'http://localhost:8102'
     }
-  };
+  }
 }
 
-plugins.push(new webpack.LoaderOptionsPlugin(loaderOptionsConfig));
+plugins.push(new webpack.LoaderOptionsPlugin(loaderOptionsConfig))
 
-export default Object.assign({
-  entry: './src/js/index.js',
-  output: {
-    path: path.resolve('./dist'),
-    filename: 'index.js',
-    publicPath: '/'
-  },
-  resolve: {
-    extensions: ['.js', '.scss', '.css', '.json']
-  },
-  plugins,
-  node: {
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          { loader: 'file-loader', options: { name: '[name].css' } },
-          { loader: 'sass-loader',
-            options: {
-              outputStyle: 'compressed',
-              includePaths: [
-                './node_modules'
-              ]
+export default Object.assign(
+  {
+    entry: './src/js/index.js',
+    output: {
+      path: path.resolve('./dist'),
+      filename: 'index.js',
+      publicPath: '/'
+    },
+    resolve: {
+      extensions: ['.js', '.scss', '.css', '.json']
+    },
+    plugins,
+    node: {
+      fs: 'empty',
+      net: 'empty',
+      tls: 'empty'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js/,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
+        },
+        {
+          test: /\.scss$/,
+          use: [
+            { loader: 'file-loader', options: { name: '[name].css' } },
+            {
+              loader: 'sass-loader',
+              options: {
+                outputStyle: 'compressed',
+                includePaths: ['./node_modules']
+              }
             }
-          }
-        ]
-      },
-      // file-loader(for images)
-      {
-        test: /\.(jpg|png|gif|svg)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: './assets/media/'
-          }
-        }]
-      },
-    ]
-  }
-}, devConfig);
+          ]
+        },
+        // file-loader(for images)
+        {
+          test: /\.(jpg|png|gif|svg)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: './assets/media/'
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  devConfig
+)

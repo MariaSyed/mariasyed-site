@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import Section from 'grommet/components/Section'
 
 export default class AppSection extends Component {
@@ -6,7 +8,6 @@ export default class AppSection extends Component {
     return (
       <Section
         {...this.props}
-        className={this.props.className}
         appCentered
         justify={'center'}
         align={'center'}
@@ -17,4 +18,15 @@ export default class AppSection extends Component {
       </Section>
     )
   }
+}
+
+AppSection.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(React.PropTypes.node),
+    PropTypes.node
+  ])
+}
+
+AppSection.defaultProps = {
+  children: null
 }

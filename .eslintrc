@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "plugin:prettier/recommended"],
   "env": {
     "node": true,
     "es6": true
@@ -16,7 +16,11 @@
     "WebSocket": true,
     "alert": true
   },
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
+    "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow","semi": false}],
     "react/jsx-filename-extension": 0,
     "react/forbid-prop-types": 0,
     "react/jsx-boolean-value": 0,
@@ -29,7 +33,7 @@
     "import/extensions": 0,
     "import/first": 0,
     "import/no-dynamic-require": 0,
-    "jsx-quotes": ["error", "prefer-single"],
+//    "jsx-quotes": ["error", "prefer-single"],
     "no-alert": 0,
     "no-use-before-define": 0,
     "no-console": 0,

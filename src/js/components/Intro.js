@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 import AppSection from './AppSection'
 import StartButton from './StartButton'
 
-import { Footer, Heading, Image, Box, Button } from 'grommet'
-import FacebookIcon from 'grommet/components/icons/base/SocialFacebook'
+import { Footer, Heading, Image, Button } from 'grommet'
 import LinkedInIcon from 'grommet/components/icons/base/SocialLinkedin'
 import EmailIcon from 'grommet/components/icons/base/SocialMail'
 
@@ -19,9 +18,9 @@ export default class Intro extends Component {
             <Image src={image} className="main-image" />
           </div>
 
-          <Heading align={'center'}>Let's Connect</Heading>
+          <Heading align={'center'}>{"Let's Connect"}</Heading>
 
-          <div className='social-container'>
+          <div className="social-container">
             <Button
               className="social-icon first"
               icon={<LinkedInIcon size="small" />}

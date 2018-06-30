@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/mariasyed/.nvm/versions/node/v8.8.1/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js run build
+  /Users/mariasyed/.nvm/versions/node/v8.8.1/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js add --dev eslint-config-prettier
 
 PATH: 
   /Users/mariasyed/Downloads/google-cloud-sdk/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/mariasyed/.nvm/versions/node/v8.8.1/bin:/Users/mariasyed/.fastlane/bin:/Users/mariasyed/downloads/google-cloud-sdk/bin:/Applications/Postgres.app/Contents/Versions/9.5/bin/:/Users/mariasyed/Library/Android/sdk/platform-tools:/Users/mariasyed/bin:/Users/mariasyed/.pyenv/shimsy:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -24,10 +24,8 @@ npm manifest:
     "scripts": {
       "test": "grommet check",
       "dev": "cross-env NODE_ENV=development grommet pack",
-  //    "start": "npm run dist-server && npm run dist",
       "start": "react-scripts start",
-      "build": "grommet pack",
-  //    "test": "react-scripts test --env=jsdom",
+      "build": "cross-env NODE_ENV=production grommet pack",
       "eject": "react-scripts eject"
     },
     "dependencies": {
@@ -57,6 +55,7 @@ npm manifest:
       "eslint-parallel": "^0.3.0",
       "eslint-plugin-import": "^2.2.0",
       "eslint-plugin-jsx-a11y": "^5.1.1",
+      "eslint-plugin-prettier": "^2.6.1",
       "eslint-plugin-react": "^7.1.0",
       "file-loader": "^0.11.2",
       "grommet-cli": "^5.0.0",
@@ -7780,10 +7779,6 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  SyntaxError: /Users/mariasyed/Documents/personal-projects/sample-app/package.json: Unexpected token / in JSON at position 240
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.3.2/libexec/lib/cli.js:770:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.3.2/libexec/lib/cli.js:92:30)
-      at /usr/local/Cellar/yarn/1.3.2/libexec/lib/cli.js:103:13
-      at <anonymous>
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
+      at errnoException (dns.js:53:10)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:95:26)
