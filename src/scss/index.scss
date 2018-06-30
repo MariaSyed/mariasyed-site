@@ -1,0 +1,18 @@
+// Color palette
+$dark-color: #2D2E35;
+$dark-primary-color: #029ef9;
+$light-primary-color: #72cbff;
+$primary-color: #2aadf9;
+$accent-color: #FF4081;
+$primary-text: #212121;
+$secondary-text: #757575;
+$divider-color: #BDBDBD;
+$text-icon-color: #DBE2E7;
+
+@import '~grommet/scss/vanilla/index';
+@import '_components-appheader';
+@import '_section-intro';
+
+.grommetux-background-color-index-brand {
+  background-color: $primary-color;
+}

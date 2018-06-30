@@ -1,0 +1,37 @@
+.app-header {
+  background-color: $dark-color!important;
+}
+
+.app-title {
+  color: $text-icon-color;
+  padding-left: 20px;
+}
+
+.nav-menu {
+  margin-left: 15px;
+}
+
+.nav-menu {
+  .nav-item {
+    color: $text-icon-color;
+    font-size: 20px;
+    padding: 0;
+    margin-left: 20px;
+  }
+
+  .nav-item:hover {
+    color: $text-icon-color;
+    text-decoration: underline!important;
+  }
+
+  .nav-item:visited {
+    color: $text-icon-color;
+  }
+
+  .nav-item {
+    .nav-label {
+      margin-bottom:0px!important;
+    }
+  }
+}
+

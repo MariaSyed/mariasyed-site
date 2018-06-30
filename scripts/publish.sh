@@ -1,0 +1,1 @@
+yarn build && surge ~/documents/personal-projects/sample-app/dist mariasyed.com
