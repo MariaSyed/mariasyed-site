@@ -24,4 +24,5 @@ To run this application, execute the following commands:
 <img src="./images/logo-eslint.png" height="100" />
 <img src="./images/logo-prettier.png" height="100" />
 <img src="./images/logo-jest.png" height="100" />
+<img src="./images/logo-sass.png" height="100" />
 </div>
