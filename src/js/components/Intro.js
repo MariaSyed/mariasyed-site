@@ -4,6 +4,7 @@ import AppSection from './AppSection'
 import StartButton from './StartButton'
 
 import { Footer, Heading, Image, Button } from 'grommet'
+import GithubIcon from 'grommet/components/icons/base/SocialGithub'
 import LinkedInIcon from 'grommet/components/icons/base/SocialLinkedin'
 import EmailIcon from 'grommet/components/icons/base/SocialMail'
 
@@ -23,6 +24,12 @@ export default class Intro extends Component {
           <div className="social-container">
             <Button
               className="social-icon first"
+              icon={<GithubIcon size="small" />}
+              href="https://github.com/MariaSyed"
+              primary={true}
+            />
+            <Button
+              className="social-icon"
               icon={<LinkedInIcon size="small" />}
               href="https://www.linkedin.com/in/maria-syed-ms/"
               primary={true}
