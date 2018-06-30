@@ -76,6 +76,5 @@
     ]
   },
   "pre-commit": [
-//    "test"
   ]
 }
