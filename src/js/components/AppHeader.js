@@ -40,11 +40,7 @@ export default class AppHeader extends Component {
     return (
       <Header className="app-header" fixed>
         <Title className="app-title">Maria Syed</Title>
-        <Box
-          flex
-          justify={this.state.mobile ? 'end' : 'start'}
-          direction="row"
-        >
+        <Box flex justify={this.state.mobile ? 'end' : 'start'} direction="row">
           <Menu
             className={this.state.mobile ? 'nav-menu-mobile' : 'nav-menu'}
             direction="row"
