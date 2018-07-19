@@ -19,5 +19,6 @@ $text-icon-color: #DBE2E7;
 }
 
 .grommetux-background-color-index-light-1 {
-  background-color: rgba(250,250,250,1);
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 59%, rgba(237,237,237,1) 98%);
 }
