@@ -6,7 +6,7 @@ import { Box, Heading } from 'grommet'
 export default class Section3 extends Component {
   render() {
     return (
-      <AppSection color="neutral-1">
+      <AppSection colorIndex="brand">
         <Box>
           <Heading size="small">cool stuff here soon</Heading>
         </Box>

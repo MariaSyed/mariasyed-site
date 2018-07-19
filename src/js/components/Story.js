@@ -3,7 +3,7 @@ import AppSection from './AppSection'
 import Carousel from 'grommet/components/Carousel'
 import Box from 'grommet/components/Box'
 
-export default class Accomplishments extends Component {
+export default class Story extends Component {
   render() {
     return (
       <AppSection colorIndex="brand">
