@@ -9,10 +9,11 @@ export default class AppSection extends Component {
       <Section
         {...this.props}
         appCentered
-        justify={'center'}
-        align={'center'}
+        justify={'start'}
+        align={'stretch'}
         full
         pad={{ vertical: 'large' }}
+        responsive
       >
         {this.props.children}
       </Section>

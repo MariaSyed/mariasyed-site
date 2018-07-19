@@ -12,7 +12,12 @@ $text-icon-color: #DBE2E7;
 @import '~grommet/scss/vanilla/index';
 @import '_components-appheader';
 @import '_section-intro';
+@import '_section-story';
 
 .grommetux-background-color-index-brand {
   background-color: $primary-color;
+}
+
+.grommetux-background-color-index-light-1 {
+  background-color: rgba(250,250,250,1);
 }

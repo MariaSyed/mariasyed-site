@@ -1,34 +1,72 @@
 .main-content {
-  .img-container {
+  .cards-container {
+    width: 100%;
     text-align: center;
+    margin-top: 10%;
+  }
+
+  .card {
+    display: inline-block;
+    position: relative;
+    margin: 20px;
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    background: rgb(251,251,251);
+    background: radial-gradient(circle, rgba(251,251,251,1) 0%, rgba(252,252,252,1) 60%, rgba(238,238,238,1) 100%);
+    box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.05);
+
+    .card-title {
+      position: absolute;
+      font-size:  20px;
+      bottom: 0;
+      margin: 0 auto 20px auto;
+      width: 100%;
+    }
+  }
+
+  .card:hover {
+    cursor: pointer;
+    animation: MoveUpDown 2s linear 1;
+  }
+
+  @keyframes MoveUpDown {
+    0%, 100%{
+      bottom: 0;
+    }
+    50% {
+      bottom: 100px;
+    }
+  }
+
+  .social-container {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    .social-icon {
+      margin-left: 20px;
+      background-color: $primary-color;
+      border-color: $primary-color;
+      text-align: center;
+    }
+
+    .social-icon:hover {
+      background-color: $light-primary-color;
+      border-color: $light-primary-color;
+    }
+
+    .first {
+      margin-left: 0px;
+    }
   }
 }
 
-.main-image {
-  width: 300px;
-  height: 300px;
-  margin-bottom: 40px;
+.footer {
+  bottom: 40px;
 }
 
-.social-container {
-  display: flex;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-  .social-icon {
-    margin-left: 20px;
-    background-color: $primary-color;
-    border-color: $primary-color;
-    text-align: center;
-  }
 
-  .social-icon:hover {
-    background-color: $light-primary-color;
-    border-color: $light-primary-color;
-  }
 
-  .first {
-    margin-left: 0px;
-  }
-}
+
