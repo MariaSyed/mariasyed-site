@@ -37,9 +37,7 @@ export default class AppHeader extends Component {
   }
 
   render() {
-    return (
-      <div />
-    )
+    return <div />
   }
 }
 

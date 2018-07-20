@@ -22,9 +22,21 @@
     background: rgb(251,251,251);
     background: radial-gradient(circle, rgba(251,251,251,1) 0%, rgba(252,252,252,1) 60%, rgba(238,238,238,1) 100%);
     box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.05);
-    -webkit-transition: bottom ease 0.5s; /* Safari */
-    transition: bottom ease 0.5s;
+    -webkit-transition: bottom ease 0.5s, -webkit-transform .8s ease-in-out; /* Safari */
     bottom: 0;
+    transform: rotate(0);
+    visibility: hidden;
+    opacity: 0;
+    transition: bottom ease 0.5s, transform .8s ease-in-out, visibility 0s, opacity 0.8s linear;
+
+    &.visible {
+      visibility: visible!important;
+      opacity: 1!important;
+    }
+
+    &.flipped {
+      transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+    }
 
     .card-title {
       position: absolute;
