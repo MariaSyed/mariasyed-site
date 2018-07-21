@@ -1,42 +1,64 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import posed from "react-pose";
-import classnames from "classnames";
-
-const AnimatedCard = posed.div({})
+import classnames from 'classnames'
 
 class IntroCard extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
       visible: false,
-      flipped: false
+      flipping: false,
+      reversed: false
     }
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({ visible: true }), this.props.timeout)
+    setTimeout(() => this.setState({ visible: true }), this.props.fadeInTimeout)
   }
 
   render() {
-    const classes = classnames('card', {
+    const cardClasses = classnames('card', {
       visible: this.state.visible,
-      flipped: this.state.flipped
+      flip: this.state.flipping !== this.state.reversed
+    })
+
+    const cardTextClasses = classnames('card-text', {
+      flipping: this.state.flipping,
+      reversed: this.state.reversed
     })
 
     return (
-      <AnimatedCard className={classes} onClick={() => this.setState({ flipped: !this.state.flipped })}>
-        <p className="card-title">{this.props.title}</p>
-      </AnimatedCard>
+      <div
+        className={cardClasses}
+        onClick={() =>
+          this.setState({ flipping: true }, () => {
+            setTimeout(
+              () =>
+                this.setState({
+                  reversed: !this.state.reversed,
+                  flipping: false
+                }),
+              800 // 0.8s transition as defined in _section-intro.scss > .card
+            )
+          })
+        }
+      >
+        <div className={cardTextClasses}>
+          {this.state.reversed ? this.props.description : this.props.title}
+        </div>
+      </div>
     )
   }
 }
 
 IntroCard.propTypes = {
-  timeout: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  fadeInTimeout: PropTypes.number
 }
 
+IntroCard.defaultProps = {
+  fadeInTimeout: 800
+}
 
 export default IntroCard
