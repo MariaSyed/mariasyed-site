@@ -13,6 +13,7 @@
   }
 
   .card {
+    cursor: pointer;
     display: inline-block;
     position: relative;
     margin: 20px;
@@ -41,7 +42,6 @@
     }
 
     .card-text {
-      width: 100%;
       position: absolute;
       font-size: 20px;
       bottom: 0;
@@ -58,11 +58,16 @@
       &.reversed {
         transform: scale(-1, 1);
         bottom: initial;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-weight: 200;
+        padding: 20px;
       }
 
       @keyframes fadeInOut {
         0%   { opacity:1; }
-        50% { opacity: 0; }
+        50% { opacity:0; }
         90% { opacity: 0; }
         100% { opacity:1; }
       }
