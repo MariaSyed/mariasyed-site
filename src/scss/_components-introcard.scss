@@ -1,0 +1,118 @@
+.card {
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+  margin: 35px 20px;
+  width: 300px;
+  height: 300px;
+  border-radius: 25px;
+  background: rgb(251, 251, 251) radial-gradient(circle, rgba(251, 251, 251, 1) 0%, rgba(252, 252, 252, 1) 60%, rgba(238, 238, 238, 1) 100%);
+  box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.05);
+  bottom: 0;
+  transform: rotate(0);
+  visibility: hidden;
+  opacity: 0;
+
+  transition: bottom ease 0.5s, transform .8s ease-in-out, visibility 0s, opacity 0.8s linear, background-color 1s;
+  -webkit-transition: bottom ease 0.5s, transform .8s ease-in-out, visibility 0s, opacity 0.8s linear, background-color 1s;
+  -moz-transition:bottom ease 0.5s, transform .8s ease-in-out, visibility 0s, opacity 0.8s linear, background-color 1s;;
+  -ms-transition: bottom ease 0.5s, transform .8s ease-in-out, visibility 0s, opacity 0.8s linear, background-color 1s;
+  -o-transition: bottom ease 0.5s, transform .8s ease-in-out, visibility 0s, opacity 0.8s linear, background-color 1s;
+
+  &.visible {
+    visibility: visible!important;
+    opacity: 1!important;
+  }
+
+  &.flip {
+    transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+  }
+
+  .card-image {
+
+    &.flipping {
+      -webkit-animation: fadeOut 2s 1;
+      -moz-animation: fadeOut 2s 1;
+      -o-animation: fadeOut 2s 1;
+      animation: fadeOut 2s 1;
+    }
+
+    &.reversed {
+      display: none;
+    }
+
+    @keyframes fadeOut {
+      0%   { opacity:1; }
+      100% { opacity:0; }
+    }
+    @-o-keyframes fadeOut{
+      0%   { opacity:1; }
+      100% { opacity:0; }
+    }
+    @-moz-keyframes fadeOut{
+      0%   { opacity:1; }
+      100% { opacity:0; }
+    }
+    @-webkit-keyframes fadeOut{
+      0%   { opacity:1; }
+      100% { opacity:0; }
+    }
+
+  }
+
+  .card-text {
+    position: absolute;
+    font-size: 20px;
+    bottom: 0;
+    margin: 0 auto 20px auto;
+    width: 100%;
+    font-weight: 300;
+
+    &.flipping {
+      -webkit-animation: fadeInOut 2s 1;
+      -moz-animation: fadeInOut 2s 1;
+      -o-animation: fadeInOut 2s 1;
+      animation: fadeInOut 2s 1;
+    }
+
+    &.reversed {
+      transform: scale(-1, 1);
+      bottom: initial;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-weight: 200;
+      padding: 20px;
+    }
+
+    @keyframes fadeInOut {
+      0%   { opacity:1; }
+      50% { opacity:0; }
+      90% { opacity: 0; }
+      100% { opacity:1; }
+    }
+    @-o-keyframes fadeInOut{
+      0%   { opacity:1; }
+      50% { opacity: 0; }
+      90% { opacity: 0; }
+      100% { opacity:1; }
+    }
+    @-moz-keyframes fadeInOut{
+      0%   { opacity:1; }
+      50% { opacity: 0; }
+      90% { opacity: 0; }
+      100% { opacity:1; }
+    }
+    @-webkit-keyframes fadeInOut{
+      0%   { opacity:1; }
+      50% { opacity: 0; }
+      90% { opacity: 0; }
+      100% { opacity:1; }
+    }
+
+  }
+}
+
+.card:hover {
+  bottom: 30px;
+}

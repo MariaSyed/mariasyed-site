@@ -4,6 +4,10 @@ import PropTypes from 'prop-types'
 import Section from 'grommet/components/Section'
 
 export default class AppSection extends Component {
+  // componentWillMount() {
+  //   configureAnchors({})
+  // }
+
   render() {
     return (
       <Section
@@ -11,7 +15,6 @@ export default class AppSection extends Component {
         appCentered
         justify={'start'}
         align={'stretch'}
-        full
         pad={{ vertical: 'large' }}
         responsive
       >
@@ -29,5 +32,6 @@ AppSection.propTypes = {
 }
 
 AppSection.defaultProps = {
+  full: false,
   children: null
 }
