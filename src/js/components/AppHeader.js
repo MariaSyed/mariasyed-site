@@ -37,24 +37,7 @@ export default class AppHeader extends Component {
   }
 
   render() {
-    return (
-      <Header className="app-header" fixed>
-        <Title className="app-title">Maria Syed</Title>
-        <Box flex justify={this.state.mobile ? 'end' : 'start'} direction="row">
-          <Menu
-            className={this.state.mobile ? 'nav-menu-mobile' : 'nav-menu'}
-            direction="row"
-            responsive
-            inline={!this.state.mobile}
-            size="large"
-            icon={<MenuIcon colorIndex="light-2" />}
-          >
-            <NavItem label="Home" path="/" mobile={this.state.mobile} />
-            <NavItem label="Blog" path="/blog" mobile={this.state.mobile} />
-          </Menu>
-        </Box>
-      </Header>
-    )
+    return <div />
   }
 }
 

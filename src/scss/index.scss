@@ -11,8 +11,15 @@ $text-icon-color: #DBE2E7;
 
 @import '~grommet/scss/vanilla/index';
 @import '_components-appheader';
+@import '_components-introcard';
 @import '_section-intro';
+@import '_section-story';
 
 .grommetux-background-color-index-brand {
   background-color: $primary-color;
+}
+
+.grommetux-background-color-index-light-1 {
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 59%, rgba(237,237,237,1) 98%);
 }

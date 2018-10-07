@@ -1,34 +1,39 @@
 .main-content {
-  .img-container {
+  margin-top: 7%;
+
+  .title {
     text-align: center;
+    font-weight: 500!important;
+  }
+
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin: 60px 0;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .cards-container {
+      display: block;
+    }
   }
 }
 
-.main-image {
-  width: 300px;
-  height: 300px;
-  margin-bottom: 40px;
+.footer {
+  bottom: 40px;
 }
 
 .social-container {
-  display: flex;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
+
   .social-icon {
-    margin-left: 20px;
-    background-color: $primary-color;
-    border-color: $primary-color;
-    text-align: center;
-  }
-
-  .social-icon:hover {
-    background-color: $light-primary-color;
-    border-color: $light-primary-color;
-  }
-
-  .first {
-    margin-left: 0px;
+    width: 30px;
+    height: 30px;
+    margin: 20px;
   }
 }
+
+
+
+
