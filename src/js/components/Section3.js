@@ -7,12 +7,7 @@ import GitHubIcon from 'grommet/components/icons/base/SocialGithub'
 export default class Section3 extends Component {
   render() {
     return (
-      <AppSection
-        id="section-3"
-        colorIndex="grey-1-a"
-        basis="large"
-        a11yTitle="Section 2"
-      >
+      <AppSection colorIndex="brand">
         <Box>
           <Heading size="small">Check out this site on GitHub</Heading>
           <Button
